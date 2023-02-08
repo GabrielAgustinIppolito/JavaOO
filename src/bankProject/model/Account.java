@@ -4,13 +4,13 @@ import java.time.LocalDate;
 public class Account{
     protected double balance;
     private final LocalDate openDate;
-    private String clientName;
+    private Client client;
     //il metodo non ha bisogno di esprimere esplicitamente
     //le variabili dell'oggetto di cui fa parte
-    public Account(double balance, LocalDate openDate, String clientName) {
+    public Account(double balance, LocalDate openDate, Client client) {
         this.balance = balance;
         this.openDate = openDate;
-        this.clientName = clientName;
+        this.client = client;
     }
 
     public double getBalance(){
@@ -25,12 +25,12 @@ public class Account{
         return openDate;
     }
 
-    public String getClient(){
-        return clientName;
+    public Client getClient(){
+        return client;
     }
 
-    public void setClient(String c){
-        clientName = c;
+    public void setClient(Client c){
+        client = c;
     }
 
     public double deposit(double amount) {
