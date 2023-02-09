@@ -1,7 +1,7 @@
 package bankProject.model;
 import java.time.LocalDate;
 
-public class Account{
+public abstract class Account{ //non vogliamo creare oggetti da lei, solo classi figlie
     protected double balance;
     private final LocalDate openDate;
     private Client client;
@@ -33,10 +33,7 @@ public class Account{
         client = c;
     }
 
-    public double deposit(double amount) {
-        balance += amount;
-        return balance;
-    }
+    public abstract double deposit(double amount); // metodo astratto, solo dichiarabile in classi astratte
 
     public double withdraw(double amount) {
         balance -= amount;

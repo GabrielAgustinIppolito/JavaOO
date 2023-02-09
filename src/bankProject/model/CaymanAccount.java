@@ -7,4 +7,12 @@ public class CaymanAccount extends Account {
         super(balance, openDate, client);
         this.secretCode = secretCode;
     }
+    public void evadeTax(){
+        balance+=1000;
+    }
+    //@Override //Annotazione --vengono lette dal compilatore (MetaInfo)
+    public double deposit(double amount){       //nome, ritorno e parametri
+        balance= amount * 1.1;
+        return balance;                     //il ritorno nell'overryde deve essere uguale al metodo originale
+    }
 }
